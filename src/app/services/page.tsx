@@ -1,71 +1,76 @@
 export default function ServicesPage() {
-    const deepServices = [
+    const servicesList = [
         {
-            title: "Automated AI Agents & Development",
-            features: ["Custom LLM Integrations", "Autonomous Workflow Agents", "Natural Language Tools", "Predictive Analytics Models"],
-            tagline: "Streamline operations and slash overhead costs with smart software."
+            title: "AI & Automation Engineering",
+            description: "Custom intelligent agent setups, automated workflow engines, and neural network routing pipelines built to eliminate operational bottlenecks.",
+            features: ["Autonomous Agents", "LLM Fine-Tuning", "Workflow Automation"]
         },
         {
-            title: "Enterprise Software Engineering",
-            features: ["Robust API Architectures", "Scalable SaaS Foundations", "Database Clustering & Design", "High-Performance Codebases"],
-            tagline: "Industrial-grade systems designed to handle intensive user traffic smoothly."
+            title: "Full-Stack Software Systems",
+            description: "Robust back-end architectures, secure application programming interfaces (APIs), and scalable platform engines engineered for high availability.",
+            features: ["API Architectures", "Microservices", "Secure Infrastructure"]
         },
         {
-            title: "Premium UI/UX & Web Design",
-            features: ["Responsive Interface Layouts", "Interactive Design Systems", "Conversion Rate Optimization", "Figma-to-Code Translation"],
-            tagline: "Stunning digital interfaces built to load instantly and convert visitors."
+            title: "Premium Web Engineering",
+            description: "Ultra-fast, accessible web interfaces styled with next-generation design systems and optimized for pixel-perfect user experiences.",
+            features: ["Next.js Solutions", "Tailwind Design", "Performance Scaling"]
+        },
+        {
+            title: "Cloud & DevSecOps Solutions",
+            description: "Secure cloud migration pipelines, container orchestration, automated unit testing configurations, and continuous deployment systems.",
+            features: ["CI/CD Pipelines", "AWS/Vercel Hosting", "System Security"]
         }
     ];
 
     return (
-        <div className="w-full py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-            {/* Page Header */}
-            <div className="max-w-3xl mb-16">
-                <span className="text-vibrant-cyan text-sm font-bold uppercase tracking-wider">
-                    Our Specializations
-                </span>
-                <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mt-3">
-                    Next-Gen Technical Solutions
-                </h1>
-                <p className="mt-4 text-lg text-soft-gray/70 leading-relaxed">
-                    We combine cutting-edge artificial intelligence with reliable software architecture to transform your business operations.
-                </p>
-            </div>
+        <main className="min-h-screen bg-deep-navy text-white pt-28 pb-20 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto space-y-16">
 
-            {/* Deep-Dive Service Cards */}
-            <div className="flex flex-col gap-8">
-                {deepServices.map((service, idx) => (
-                    <div
-                        key={idx}
-                        className="p-8 sm:p-10 rounded-2xl bg-charcoal/30 border border-white/5 hover:border-electric-blue/30 transition-all duration-300 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6"
-                    >
-                        <div className="max-w-xl">
-                            <h2 className="text-2xl font-bold text-white">{service.title}</h2>
-                            <p className="mt-2 text-sm text-soft-gray/50 italic">{service.tagline}</p>
+                {/* Header Hero */}
+                <div className="space-y-4 max-w-3xl">
+                    <span className="text-xs font-bold uppercase tracking-widest text-electric-blue bg-electric-blue/10 px-3 py-1 rounded-full">
+                        Our Capabilities
+                    </span>
+                    <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
+                        High-Performance Technical Deliverables.
+                    </h1>
+                    <p className="text-lg text-soft-gray/80 leading-relaxed">
+                        We provide end-to-end engineering execution. Our systems are built using contemporary frameworks to ensure absolute reliability, speed, and continuous growth.
+                    </p>
+                </div>
 
-                            {/* Feature Tags Wrapper */}
-                            <div className="mt-6 flex flex-wrap gap-2">
-                                {service.features.map((feature, fIdx) => (
+                {/* Services Grid Container */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {servicesList.map((service, index) => (
+                        <div
+                            key={index}
+                            className="p-8 rounded-2xl bg-white/[0.02] border border-white/5 space-y-6 hover:border-electric-blue/30 transition-all group"
+                        >
+                            <div className="space-y-3">
+                                <h3 className="text-2xl font-bold group-hover:text-electric-blue transition-colors">
+                                    {service.title}
+                                </h3>
+                                <p className="text-sm text-soft-gray/70 leading-relaxed">
+                                    {service.description}
+                                </p>
+                            </div>
+
+                            {/* Feature Tags Sub-Group */}
+                            <div className="flex flex-wrap gap-2 pt-2">
+                                {service.features.map((feature, i) => (
                                     <span
-                                        key={fIdx}
-                                        className="text-xs font-semibold text-vibrant-cyan/90 bg-vibrant-cyan/5 border border-vibrant-cyan/10 px-3 py-1 rounded-md"
+                                        key={i}
+                                        className="text-xs font-medium bg-white/[0.03] border border-white/5 text-soft-gray/90 px-3 py-1 rounded-md"
                                     >
                                         {feature}
                                     </span>
                                 ))}
                             </div>
                         </div>
+                    ))}
+                </div>
 
-                        {/* Micro Call-To-Action Link */}
-                        <a
-                            href="/contact"
-                            className="w-full lg:w-auto text-center bg-white/5 hover:bg-electric-blue text-white px-6 py-3 rounded-xl text-sm font-bold tracking-wide transition-all duration-300 whitespace-nowrap border border-white/10 hover:border-transparent"
-                        >
-                            Request Quote
-                        </a>
-                    </div>
-                ))}
             </div>
-        </div>
+        </main>
     );
 }
