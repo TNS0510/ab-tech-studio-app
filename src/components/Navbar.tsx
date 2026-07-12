@@ -32,17 +32,18 @@ export default function Navbar() {
                 </div>
 
                 {/* Right Action Side: Interactive Controls Group */}
+
                 <div className="flex items-center gap-4">
                     <ThemeToggle />
 
                     <Link
                         href="/contact"
-                        className="hidden sm:inline-block bg-electric-blue hover:bg-electric-blue/90 text-white font-bold px-5 py-2.5 rounded-lg text-xs tracking-wide transition-all shadow-md shadow-electric-blue/10"
+                        // We removed 'hidden sm:' so the button stays visible on mobile phone screens!
+                        className="inline-block bg-electric-blue hover:bg-electric-blue/90 text-white font-bold px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg text-xs tracking-wide transition-all shadow-md shadow-electric-blue/10"
                     >
                         Let's Talk
                     </Link>
                 </div>
-
             </div>
         </nav>
     );
