@@ -1,4 +1,5 @@
-// Step 1: Import our brand new ServicesGrid module from the components folder
+// Step 1: Import our brand new ServicesGrid module and native Next.js Link component
+import Link from "next/link";
 import ServicesGrid from "@/components/ServicesGrid";
 
 export default function Home() {
@@ -26,20 +27,20 @@ export default function Home() {
           Empowering businesses with innovative AI solutions, custom software engineering, stunning web interfaces, and reliable IT services that drive scalable growth and efficiency.
         </p>
 
-        {/* Call to Action Actions Wrapper */}
+        {/* Call to Action Actions Wrapper (Updated cleanly to utilize framework Links!) */}
         <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <a
+          <Link
             href="/services"
             className="bg-electric-blue hover:bg-electric-blue/90 text-white px-6 py-3.5 rounded-lg text-sm font-bold tracking-wide transition-all shadow-lg shadow-electric-blue/20"
           >
             Explore Services
-          </a>
-          <a
+          </Link>
+          <Link
             href="/contact"
             className="bg-white/5 hover:bg-white/10 text-white border border-white/10 px-6 py-3.5 rounded-lg text-sm font-bold tracking-wide transition-all"
           >
             Let's Talk
-          </a>
+          </Link>
         </div>
       </section>
 
