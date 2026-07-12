@@ -1,65 +1,50 @@
-import Image from "next/image";
+// Step 1: Import our brand new ServicesGrid module from the components folder
+import ServicesGrid from "@/components/ServicesGrid";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="w-full">
+      {/* Hero Section Container */}
+      <section className="relative px-4 sm:px-6 lg:px-8 py-20 md:py-32 max-w-7xl mx-auto flex flex-col items-center text-center">
+
+        {/* Animated Feature Tag */}
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-electric-blue/10 border border-electric-blue/20 text-vibrant-cyan text-xs sm:text-sm font-semibold tracking-wide uppercase mb-8">
+          <span className="w-2 h-2 rounded-full bg-vibrant-cyan animate-pulse"></span>
+          AI-Powered. Future-Ready.
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+
+        {/* Main H1 Hero Headline */}
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-white max-w-4xl leading-tight">
+          Intelligent Solutions.<br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-blue to-vibrant-cyan">
+            Smarter Businesses.
+          </span>
+        </h1>
+
+        {/* Core Explainer Body Paragraph */}
+        <p className="mt-6 text-base sm:text-lg md:text-xl text-soft-gray/70 max-w-2xl leading-relaxed">
+          Empowering businesses with innovative AI solutions, custom software engineering, stunning web interfaces, and reliable IT services that drive scalable growth and efficiency.
+        </p>
+
+        {/* Call to Action Actions Wrapper */}
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/services"
+            className="bg-electric-blue hover:bg-electric-blue/90 text-white px-6 py-3.5 rounded-lg text-sm font-bold tracking-wide transition-all shadow-lg shadow-electric-blue/20"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            Explore Services
           </a>
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
+            className="bg-white/5 hover:bg-white/10 text-white border border-white/10 px-6 py-3.5 rounded-lg text-sm font-bold tracking-wide transition-all"
           >
-            Documentation
+            Let's Talk
           </a>
         </div>
-      </main>
+      </section>
+
+      {/* Step 2: Render our Services Grid cleanly right below the Hero container */}
+      <ServicesGrid />
     </div>
   );
 }
